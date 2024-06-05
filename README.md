@@ -64,15 +64,19 @@ network for a single omics data (transcriptome or proteome).
                          verbose=True):
 
 The parameters of  `Cal_Nbrs_Net` are:
-- `adata`: The adata file (H5AD format) that need to be smoothed.
-- `feat`: Controling the gradient of Gaussian curve.
-- `rad_cutoff`: The a-value of the Gaussian kernel function, which is used to control the height of the Gaussian curve.
-- `k_cutoff`: The b-value of the Gaussian kernel function, which is used to control the centre of the Gaussian curve.
-- `model`: Number of principal components for calculating neighborhoods. 
-- `verbose`: Number of nearest neighbors for computing kernel bandwidth.
+- `adata`: An AnnData object, where obsm contains spatial coordinates or 
+           coordinate information.
+- `feat`: The feature matrix used to calculate the neighbors. Can be either reduced coordinates ('X_pca') or spatial 
+          coordinates ('spatial').
+- `rad_cutoff`: When using the radius neighbor model, defines the neighborhood radius. If using the Radius model, 
+                this value must be provided.
+- `k_cutoff`: Defines the number of neighbors when using the KNN model. This value is required if the KNN model is used.
+- `model`: Specifies the type of model to use. Possible values are 'Radius' and 'KNN'.
+- `verbose`: If True, the function will print progress information as it calculates.
 
 return value:
-- `adata`: The updated AnnData object, containing the calculated neighboring network information, is stored in uns['nbrs_net'].
+- `adata`: The updated AnnData object, containing the calculated neighboring network information, is stored in 
+    adata.uns['nbrs_net'].
 
 ### Step 2:Network pruning
 This function is used to prune the adjacency network calculated by the `Cal_Nbrs_Net` function, ensuring that each edge 
