@@ -13,7 +13,7 @@ _version_ = "1.0.0"
 
 
 setup(
-    name = "ssmiDGATE",
+    name = "SSGATE",
     version = _version_,
     author="liulin4",
     author_email = "liulin4@genomics.cn",
@@ -24,6 +24,7 @@ setup(
         'Programming Language :: Python :: 3.6'
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8'
+         'Programming Language :: Python :: 3.9'
         'Environment :: Console'
     ],
     install_requires = [
