@@ -36,7 +36,7 @@ Extract password is :nrEB
 ## Install and use it by Git
 ```bash
 ### Python enviroment constructed by Conda
-conda create -n SSGATE python=3.8
+conda create -n SSGATE python=3.9
 conda activate SSGATE
 git clone https://github.com/Linliu-Bioinf/SSGATE.git
 cd SSGATE
