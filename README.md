@@ -28,9 +28,19 @@ Figure 1. Overview of SSGATE. (A) Neighborhood graph construction for single-cel
 [Download](https://github.com/Linliu-Bioinf/SSGATE/archive/refs/heads/main.zip) this GitHub repository, and extract the contents into a folder.
 
 ### Data Description
+
+`Note:` SSGATE requires data in [anndata](https://anndata.readthedocs.io/en/latest/) format as inputs. 
+The expression profiles are required to be stored in anndata.X, otherwise the data cannot be read 
+correctly. The spatial coordinates from spatial multi-omics data are required to be stored in 
+`anndata.obsm['spatial']`, otherwise it will be processed as single-cell multi-omics data due to 
+the spatial information cannot be read.
+
 We provide the datasets used in this study, which are stored in the BGI cloud disk.
 [Link](https://bgipan.genomics.cn/#/link/vkxFIxtLWYRBXeHgHwlW)
 Extract password is :nrEB
+
+
+
 ## Install and use it by Git
 ```bash
 ### Python enviroment constructed by Conda
@@ -51,7 +61,7 @@ running `SSGATE` have been configured.
 
 ## Parameter Explanation
 ### Step 1:Neighborhood network construction
-Before running SSGATE for multi-omics joint feature analysis, you must use the XX function to construct a neighbor 
+Before running SSGATE for multi-omics joint feature analysis, you must use the `Cal_Nbrs_Net` function to construct a neighbor 
 network for a single omics data (transcriptome or proteome).
 
     adata = Cal_Nbrs_Net(adata, 

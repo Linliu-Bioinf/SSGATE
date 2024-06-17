@@ -13,7 +13,7 @@ _version_ = "1.0.0"
 
 
 setup(
-    name = "ssmiDGATE",
+    name = "SSGATE",
     version = _version_,
     author="liulin4",
     author_email = "liulin4@genomics.cn",
